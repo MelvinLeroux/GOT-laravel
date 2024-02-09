@@ -10,14 +10,17 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 class Character extends Model
 {
     use HasFactory;
+
     public function houses(): BelongsToMany
     {
-        return $this->belongsToMany(House::class, 'houses_has_characters', 'character','house');
+        return $this->belongsToMany(House::class, 'houses_has_characters', 'character', 'house');
     }
+
     public function title(): BelongsTo
     {
         return $this->belongsTo(Title::class, "id_title");
     }
+
     public function father(): BelongsTo
     {
         return $this->belongsTo(Character::class, "father_id");
