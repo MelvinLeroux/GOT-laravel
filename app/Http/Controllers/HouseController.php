@@ -17,7 +17,7 @@ class HouseController extends Controller
 
     public function read($id)
     {
-             // method to display one house from its id with the characters associated
+         // method to display one house from its id with the characters associated
 
         $house = House::with('characters',)->find($id);
         if (!$house) {

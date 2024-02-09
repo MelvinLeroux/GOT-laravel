@@ -12,8 +12,8 @@ class CharacterController extends Controller
     {
         // method to display all characters
         $characters = Character::get();
-
-        return  view('home', ['characters' => ($characters)]);
+        $characters->load("houses");
+        return  view('home', ['characters' => ($characters), 'houseName' => '']);
     }
 
     public function read($id)
