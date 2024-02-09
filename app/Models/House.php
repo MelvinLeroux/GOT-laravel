@@ -9,10 +9,9 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 class House extends Model
 {
     use HasFactory;
-    use HasFactory;
+
     public function characters(): BelongsToMany
     {
-
-         return ($this->belongsToMany(Character::class, 'houses_has_characters','house','character'));
+        return ($this->belongsToMany(Character::class, 'houses_has_characters', 'house', 'character'));
     }
 }
