@@ -17,14 +17,14 @@ class HouseController extends Controller
 
     public function read($id)
     {
-             // method to display one house from its id
+             // method to display one house from its id with the characters associated
 
-        $house = House::find($id);
+        $house = House::with('characters',)->find($id);
         if (!$house) {
             return response()->json([
                 "error" => "house not found"
             ], 404);
         }
-        return view('home',['houses' => $house, 'houseId' =>$id,]);
+        return view('home',['houses' => $house, 'houseId' =>$id,'characters'=>$house['characters']]);
     }
 }
