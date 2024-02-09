@@ -17,3 +17,4 @@ use App\Http\Controllers\CharacterController;
 
 
 Route::get('/',[CharacterController::class,'list'])->name('main.home');
+Route::get('/characters/{id}',[CharacterController::class,'read',])->name('main.character');

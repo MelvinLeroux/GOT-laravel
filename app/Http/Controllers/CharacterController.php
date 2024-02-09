@@ -9,10 +9,22 @@ class CharacterController extends Controller
 {
 
     public function list()
-   {
-    // method to dosiplay all characters
-    $characters = Character::get();
+    {
+        // method to display all characters
+        $characters = Character::get();
 
-    return  view('home', ['characters' => ($characters)]);
+        return  view('home', ['characters' => ($characters)]);
+    }
+
+    public function read($id)
+    {
+        // method to display one character from his id
+        $character = Character::find($id);
+        if (!$character) {
+            return response()->json([
+                "error" => "character not found"
+            ], 404);
+        }
+        return view('character',['character' => ($character)]);
     }
 }

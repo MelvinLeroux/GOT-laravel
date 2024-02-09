@@ -4,7 +4,7 @@
             <ul class="characters-list">
                 @foreach ( $characters ?? [] as $character )
                 <li class="character-card">
-                    <a href="">
+                    <a href="{{ route('main.character', ['id' =>  $character->id]) }}">
                         <div class="avatar" >
                             <img src="/assets/img/{{ $character->image }}" alt="{{ $character->first_name }}">
                         </div>
