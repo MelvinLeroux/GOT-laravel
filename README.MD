@@ -31,17 +31,12 @@ This project uses:
 
 ### Done
 
-- [x] MVC architecture setup
-- [x] Composer and dependencies install
-- [x] View creations
+- [x] Laravel setup
 - [x] Controller and models creations
-- [x] Dynamic search on homepage
-- [x] Researched films display
-- [x] Dynamic display of a movie details
-- [x] Dispatcher add
+- [x] Views creations
+- [x] Dynamic display of a character details
+- [x]  Dynamic display of a house
 - [x] navigation on clic
-- [x] Dynamic header searchbar
-- [x] Error handling
 
 ## TODO
 
